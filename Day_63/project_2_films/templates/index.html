@@ -20,15 +20,19 @@ block content %}
         <p class="review">"{{film.review}}"</p>
         <p class="overview">{{film.description}}</p>
 
-        <a href="#" class="button">Update</a>
-        <a href="#" class="button delete-button">Delete</a>
+        <a href="{{url_for('edit', id=film.id)}}" class="button">Update</a>
+        <a
+          href="{{ url_for('delete_film', id=film.id) }}"
+          class="button delete-button"
+          >Delete</a
+        >
       </div>
     </div>
   </div>
   {% endfor %}
 </div>
 <div class="container text-center add">
-  <a href="#" class="button">Add Movie</a>
+  <a a href="{{url_for('add_film')}}" class="button">Add Movie</a>
 </div>
 
 {% endblock %}
